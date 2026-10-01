@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
@@ -118,7 +117,57 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Il colore indica solo lo stato glicemico (basso / in target / alto). Il resto è inchiostro. */
+:root {
+  --gc-bg: #eef1f4;
+  --gc-surface: #e3e8ec;
+  --gc-ink: #14212b;
+  --gc-muted: #5b6975;
+  --gc-line: #cdd5db;
+  --gc-ok: #12856a;
+  --gc-high: #bf6410;
+  --gc-low: #c9303d;
+}
+
+.dark {
+  --gc-bg: #10181f;
+  --gc-surface: #18232c;
+  --gc-ink: #e8edf1;
+  --gc-muted: #8a99a5;
+  --gc-line: #26343f;
+  --gc-ok: #3cc9a0;
+  --gc-high: #f0a04b;
+  --gc-low: #ff6b73;
+}
+
+.gc-root {
+  background: var(--gc-bg);
+  color: var(--gc-ink);
+  font-family: 'Archivo Variable', system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.gc-muted {
+  color: var(--gc-muted);
+}
+
+.gc-surface {
+  background: var(--gc-surface);
+}
+
+.gc-rule {
+  border-color: var(--gc-line);
+}
+
+/* Numeri: Archivo in larghezza condensata, come un display strumentale */
+.gc-num {
+  font-stretch: 75%;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
